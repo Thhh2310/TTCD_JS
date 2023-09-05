@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Độ tuổi chịu trách nhiệm hình sự</title>
+
+    <script>
+        function check(){
+            if (myform.age.value < 18) {
+                document.writeln("You are not eligible"+myform.age.value);
+            }
+            else{
+                document.writeln("Yor are eligible"+myform.age.value);
+            }
+        }
+        function losefocus() {
+            if (myform.name.value=="") {
+                alert("You can not leave the name filed blank");
+                myform.name.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myform" onchange="losefocus()">
+        <p>
+            <h5><i>Enter name:</i></h5>
+            <input name="name" type="text" size="35" onblur="losefocus()">
+        </p>
+        <p>
+            <h5><i>Enter age:</i></h5>
+            <input name="age" type="text" size="5">
+        </p>
+        <input type="button" value="Check" onclick="check()">
+        <input type="reset" value="Clear">
+    </form>
+</body>
+</html>
